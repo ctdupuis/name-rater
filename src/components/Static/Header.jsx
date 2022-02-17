@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ currentUser }) {
   return (
     <header className="banner">
       <NavLink to={"/"} className="banner-title">

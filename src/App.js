@@ -17,6 +17,7 @@ function App({ currentUser, alert, loading, authStatus }) {
   const [currentPokemon, setCurrentPokemon] = useState({});
 
   useEffect(() => {
+    authStatus();
     fetchAllPokemon();
   }, [])
 
@@ -53,11 +54,11 @@ function App({ currentUser, alert, loading, authStatus }) {
 
   return (
     <div className="App">
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes>
         <Route exact path={"/"} element={<Home />} />
 
-        <Route exact path={"/signup"} element={<Signup />} />
+        <Route exact path={"/signup"} element={<Signup currentUser={currentUser} />} />
 
         <Route exact path={"/login"} element={<Login />} />
       </Routes>
