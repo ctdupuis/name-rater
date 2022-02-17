@@ -12,3 +12,7 @@ code {
 :root {
   --red1: #CD0B0B;
 }
+
+a {
+  text-decoration: none;
+}

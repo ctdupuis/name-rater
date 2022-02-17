@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Static/Header';
 import Home from './components/Static/Home';
+import Signup from './components/Forms/Signup';
+import Login from './components/Forms/Login';
 
 function App() {
 
@@ -47,12 +49,13 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
-        <Route path={"/"} 
-          element={<Header />}
-        />
-
         <Route exact path={"/"} element={<Home />} />
+
+        <Route exact path={"/signup"} element={<Signup />} />
+
+        <Route exact path={"/login"} element={<Login />} />
       </Routes>
       <label>Choose a Pokemon</label>
       <select onChange={handleSelect}>
