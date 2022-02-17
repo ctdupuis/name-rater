@@ -1,5 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
 
 function App() {
 
@@ -31,23 +34,26 @@ function App() {
 
   const pokemonCard = currentPokemon.name ?
       <div>
-        {currentPokemon.name}
         <img src={currentPokemon["sprites"]["other"]["official-artwork"]["front_default"]} alt={currentPokemon.name} />
       </div>
       :
-      <div>Loading...</div>
+      null
 
   const options = pokemon.map((p, i) => <option key={i} value={p.name}>{p.name}</option>)
 
   const handleSelect = e => {
-    // fetch(`https://pokeapi.co/v2/pokemon/${e.target.value}`)
-    // .then(res => res.json())
-    // .then(json => setCurrentPokemon(json))
-    setFetchName(e.target.value)
+    setFetchName(e.target.value);
   }
 
   return (
     <div className="App">
+      <Routes>
+        <Route path={"/"} 
+          element={<Header />}
+        />
+
+        <Route exact path={"/"} element={<Home />} />
+      </Routes>
       <label>Choose a Pokemon</label>
       <select onChange={handleSelect}>
         <option>Choose a Pokemon</option>
