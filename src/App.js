@@ -1,8 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
+import Header from './components/Static/Header';
+import Home from './components/Static/Home';
 
 function App() {
 
