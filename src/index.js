@@ -16,7 +16,7 @@ const store = createStore(
     applyMiddleware(thunk),
     composeWithDevTools()
   )
-)
+);
 
 ReactDOM.render(
   <React.StrictMode>

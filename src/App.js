@@ -1,12 +1,16 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Header from './components/Static/Header';
 import Home from './components/Static/Home';
 import Signup from './components/Forms/Signup';
 import Login from './components/Forms/Login';
 
-function App() {
+import { authStatus } from './actions/user_actions';
+
+function App({ currentUser, authStatus }) {
 
   const [pokemon, setPokemon] = useState([]);
   const [fetchName, setFetchName] = useState(false);
@@ -69,4 +73,12 @@ function App() {
   );
 }
 
-export default App;
+// export default App;
+export default connect(
+  state => ({
+    currentUser: state.userReducer.currentUser
+  }),
+  {
+    authStatus
+  }
+)(App)
