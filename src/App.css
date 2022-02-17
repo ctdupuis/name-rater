@@ -29,6 +29,7 @@
 
 .auth-btn:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .signup {
@@ -45,10 +46,12 @@
 
 .login {
   background: none;
-  border: none;
+  border: solid whitesmoke;
   color: whitesmoke;
+  transition: 0.3s;
 }
 
 .login:hover {
-  color: black
+  color: black;
+  border: solid black;
 }
