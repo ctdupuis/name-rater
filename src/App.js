@@ -10,7 +10,7 @@ import Login from './components/Forms/Login';
 
 import { authStatus } from './actions/user_actions';
 
-function App({ currentUser, authStatus }) {
+function App({ currentUser, alert, loading, authStatus }) {
 
   const [pokemon, setPokemon] = useState([]);
   const [fetchName, setFetchName] = useState(false);
@@ -76,7 +76,9 @@ function App({ currentUser, authStatus }) {
 // export default App;
 export default connect(
   state => ({
-    currentUser: state.userReducer.currentUser
+    currentUser: state.userReducer.currentUser,
+    alert: state.alertReducer.alert,
+    loading: state.loadReducer.loading
   }),
   {
     authStatus

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_ROOT, startLoad, endLoad} from '../constant'
+import { API_ROOT } from '../constant'
 
 export const authStatus = () => {
     return async (dispatch) => {
