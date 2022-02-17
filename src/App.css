@@ -17,3 +17,38 @@
 .logo {
   margin-left: -9%;
 }
+
+.flex-cont {
+  display: flex;
+}
+
+.auth-btn {
+  font-size: large;
+  padding: 5%;
+}
+
+.auth-btn:hover {
+  cursor: pointer;
+}
+
+.signup {
+  background-color: whitesmoke;
+  color: black;
+  border: none;
+  transition: 0.3s;
+}
+
+.signup:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.login {
+  background: none;
+  border: none;
+  color: whitesmoke;
+}
+
+.login:hover {
+  color: black
+}
