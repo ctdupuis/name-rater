@@ -61,6 +61,7 @@
 
 .login:hover {
   color: black;
-  border: solid black;
+  border: solid whitesmoke;
+  background-color: whitesmoke;
 }
 
