@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-export default function Login() {
+export default function Login({ login }) {
     const [userdata, setUserdata] = useState({ username: "", email: "", password: ""});
 
     const [type, setType] = useState("password");
@@ -25,7 +25,7 @@ export default function Login() {
 
     const handleSubmit = e => {
       e.preventDefault();
-      console.log("submitted", userdata)
+      login(userdata)
     }
 
     return (

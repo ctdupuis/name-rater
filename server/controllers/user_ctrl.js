@@ -27,6 +27,20 @@ module.exports = {
         }
     },
     login: async(req, res) => {
-
+        const { username, email, password } = req.body.userdata;
+        const user = await User.findOne({ email: email });
+        const authenticated = bcrypt.compareSync(password, user.password);
+        if (authenticated) {
+            let secureUser = {...user["_doc"]};
+            delete secureUser.password;
+            req.session.user = secureUser;
+            res.status(200).send(secureUser);
+        } else {
+            res.status(400).send({ alert: {type: "error", message: "Invalid username or password"}})
+        }
+    },
+    logout: async(req, res) => {
+        req.session.destroy();
+        res.status(200).send({ alert: { type: 'success', message: 'Successfully logged out'}})
     }
 };

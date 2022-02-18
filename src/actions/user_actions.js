@@ -20,9 +20,29 @@ export const authStatus = () => {
 export const signup = userdata => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
-        const res = await axios.post(`${API_ROOT}/users/signup`, { userdata })
+        const res = await axios.post(`${API_ROOT}/users/signup`, { userdata }, {withCredentials:true});
+        const user = res.data;
+        dispatch({ type: 'LOGIN_USER', payload: user })
+        dispatch({ type: 'END_LOAD'})
+    }
+}
+
+export const login = userdata => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const res = await axios.post(`${API_ROOT}/users/login`, { userdata }, {withCredentials:true})
         const user = res.data;
         console.log(user)
-        dispatch({ type: 'END_LOAD'})
+    }
+}
+
+export const logout = () => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.get(`${API_ROOT}/users/logout`, { withCredentials:true });
+        const alert = response.data;
+        dispatch({ type: 'INIT_ALERT', payload: alert.alert })
+        dispatch({ type: 'LOGOUT_USER' })
+        dispatch({ type: 'END_LOAD' })
     }
 }

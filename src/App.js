@@ -8,9 +8,9 @@ import Home from './components/Static/Home';
 import Signup from './components/Forms/Signup';
 import Login from './components/Forms/Login';
 
-import { authStatus, signup } from './actions/user_actions';
+import { authStatus, signup, login, logout } from './actions/user_actions';
 
-function App({ currentUser, alert, loading, authStatus, signup }) {
+function App({ currentUser, alert, loading, authStatus, signup, login, logout }) {
 
   const [pokemon, setPokemon] = useState([]);
   const [fetchName, setFetchName] = useState(false);
@@ -54,13 +54,13 @@ function App({ currentUser, alert, loading, authStatus, signup }) {
 
   return (
     <div className="App">
-      <Header currentUser={currentUser} />
+      <Header currentUser={currentUser} logout={logout} />
       <Routes>
         <Route exact path={"/"} element={<Home />} />
 
         <Route exact path={"/signup"} element={<Signup currentUser={currentUser} signup={signup} />} />
 
-        <Route exact path={"/login"} element={<Login />} />
+        <Route exact path={"/login"} element={<Login login={login} />} />
       </Routes>
       
       
@@ -85,6 +85,8 @@ export default connect(
   }),
   {
     authStatus,
-    signup
+    signup,
+    login,
+    logout
   }
 )(App)
