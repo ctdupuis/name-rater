@@ -13,7 +13,8 @@ const NameSchema = new Schema({
     },
     userID: {
         type: ObjectId,
-        required: true
+        required: true,
+        ref: "User"
     }
 })
 
