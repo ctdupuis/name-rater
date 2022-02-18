@@ -22,6 +22,14 @@
   display: flex;
 }
 
+.cent-align {
+  align-items: center;
+}
+
+.cent-just {
+  justify-content: center;
+}
+
 .auth-btn {
   font-size: large;
   padding: 5%;
@@ -55,3 +63,4 @@
   color: black;
   border: solid black;
 }
+

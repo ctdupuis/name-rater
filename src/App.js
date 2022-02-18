@@ -62,13 +62,15 @@ function App({ currentUser, alert, loading, authStatus }) {
 
         <Route exact path={"/login"} element={<Login />} />
       </Routes>
-      <label>Choose a Pokemon</label>
+      
+      
+      {/* <label>Choose a Pokemon</label>
       <select onChange={handleSelect}>
         <option>Choose a Pokemon</option>
         {options}
       </select>
 
-    <span>Currently selected: {pokemonCard} </span>
+      <span>Currently selected: {pokemonCard} </span> */}
       
     </div>
   );

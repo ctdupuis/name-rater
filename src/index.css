@@ -1,3 +1,7 @@
+* {
+  margin: 0
+}
+
 body, button {
   margin: 0;
   font-family: 'Permanent Marker', cursive;
@@ -11,6 +15,7 @@ code {
 
 :root {
   --red1: #CD0B0B;
+  --red2: #ff1313;
 }
 
 a {

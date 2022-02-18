@@ -1,0 +1,85 @@
+.modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.modal {
+    position: fixed;
+    top: 20%;
+    bottom: 20%;
+    right: 20%;
+    left: 20%;
+    z-index: 200;
+    overflow: auto;
+    background-color: whitesmoke;
+    padding: 2%;
+}
+
+.modal-head {
+    /* border-bottom: 1px solid var(--red1); */
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body {
+    margin: 4em 20em;
+}
+
+.session-form {
+    display: flex;
+    flex-direction: column;
+    /* display: block; */
+}
+
+.session-form input {
+    outline: none;
+    border-color: var(--red1);
+    padding: 1%;
+}
+
+.session-form input, label {
+    margin-top: 1%;
+}
+
+.sesh-tab {
+    color: black;
+    transition: 0.4s;
+}
+
+.sesh-tab:hover {
+    color: var(--red1);
+}
+
+.sesh-sbt {
+    align-self: center;
+    margin-top: 3%;
+    padding: 1%;
+    background-color: var(--red1);
+    border: none;
+    color: whitesmoke;
+}
+
+.sesh-sbt:hover {
+    cursor: pointer;
+    background-color: var(--red2);
+    text-decoration: underline;
+    transition: 0.4s;
+}
+
+.eye {
+    margin-top: -23px;
+    margin-right: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.eye:hover {
+    cursor: pointer;
+    background-color: #cdcdcd;
+}
