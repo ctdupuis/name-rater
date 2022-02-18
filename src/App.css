@@ -50,6 +50,7 @@
 .auth-btn {
   font-size: large;
   padding: 5%;
+  border-radius: 5px;
 }
 
 .auth-btn:hover {

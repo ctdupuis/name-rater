@@ -35,6 +35,7 @@
     padding: 1%;
     font-size: larger;
     border: none;
+    border-radius: 5px;
 }
 
 .start:hover {

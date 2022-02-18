@@ -19,10 +19,10 @@
     overflow: auto;
     background-color: whitesmoke;
     padding: 2%;
+    box-shadow: 3px 10px 40px black;
 }
 
 .modal-head {
-    /* border-bottom: 1px solid var(--red1); */
     display: flex;
     justify-content: center;
 }
@@ -34,13 +34,13 @@
 .session-form {
     display: flex;
     flex-direction: column;
-    /* display: block; */
 }
 
 .session-form input {
     outline: none;
     border-color: var(--red1);
     padding: 1%;
+    border-radius: 5px;
 }
 
 .session-form input, label {
@@ -59,10 +59,11 @@
 .sesh-sbt {
     align-self: center;
     margin-top: 3%;
-    padding: 1%;
+    padding: 2%;
     background-color: var(--red1);
     border: none;
     color: whitesmoke;
+    border-radius: 5px;
 }
 
 .sesh-sbt:hover {
