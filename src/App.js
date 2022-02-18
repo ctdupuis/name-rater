@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from './components/Static/Header';
+import Header from './components/Static/Header/Header';
 import Home from './components/Static/Home';
 import Signup from './components/Forms/Signup';
 import Login from './components/Forms/Login';
 
 import { authStatus, signup, login, logout } from './actions/user_actions';
+import Profile from './components/Static/Profile/Profile';
 
 function App({ currentUser, alert, loading, authStatus, signup, login, logout }) {
 
@@ -61,6 +62,8 @@ function App({ currentUser, alert, loading, authStatus, signup, login, logout })
         <Route exact path={"/signup"} element={<Signup currentUser={currentUser} signup={signup} />} />
 
         <Route exact path={"/login"} element={<Login login={login} />} />
+
+        <Route exact path={"/profile"} element={<Profile currentUser={currentUser} />} />
       </Routes>
       
       

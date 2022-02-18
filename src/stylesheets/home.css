@@ -1,0 +1,45 @@
+.profile-link {
+    align-self: center;
+    color: whitesmoke;
+}
+
+.profile-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: -25%;
+    margin-left: 5%;
+}
+
+.nav-link {
+    margin-left: 30%;
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.btn-cont {
+    text-align: center;
+}
+
+.start {
+    background-color: var(--red1);
+    color: whitesmoke;
+    padding: 1%;
+    font-size: larger;
+    border: none;
+}
+
+.start:hover {
+    background-color: var(--red2);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.3s;
+}
