@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-export default function Signup() {
+export default function Signup({ signup }) {
     const [userdata, setUserdata] = useState({ username: "", email: "", password: ""});
 
     const [type, setType] = useState("password");
@@ -16,12 +16,17 @@ export default function Signup() {
     }
 
     const handleChange = event => {
-        setUserdata({ ...userdata, [event.target.name]: event.target.value })
+        setUserdata({ ...userdata, [event.target.name]: event.target.value });
     }
 
     const handleClose = () => {
-        navigate('/')
+        navigate('/');
     }
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        signup(userdata)
+      }
 
     return (
         <>
@@ -35,7 +40,7 @@ export default function Signup() {
                 </div>
 
                 <div className="modal-body">
-                    <form className="session-form">
+                    <form onSubmit={handleSubmit} className="session-form">
                         <label>Email</label>
                         <input onChange={handleChange} type="email" name="email" />
 

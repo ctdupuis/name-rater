@@ -11,7 +11,7 @@ module.exports = {
             res.status(200).send({ auth: false })
         }
     },
-    register: async(req, res) => {
+    signup: async(req, res) => {
         const { userdata } = req.body;
         const securePass = bcrypt.hashSync(userdata.password, salt);
         userdata.password = securePass;
@@ -25,5 +25,8 @@ module.exports = {
         } catch (err) {
             res.status(400).send({ alert: { type: 'error', message: "Username or email is already taken "}});
         }
+    },
+    login: async(req, res) => {
+
     }
 };

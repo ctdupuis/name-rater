@@ -3,10 +3,12 @@ const router = express.Router();
 
 const {
     auth,
-    register
+    signup,
+    login
 } = require("../controllers/user_ctrl");
 
 router.get("/auth", auth);
-router.post("/register", register)
+router.post("/signup", signup);
+router.post("/login", login);
 
 module.exports = router;

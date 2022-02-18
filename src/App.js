@@ -8,9 +8,9 @@ import Home from './components/Static/Home';
 import Signup from './components/Forms/Signup';
 import Login from './components/Forms/Login';
 
-import { authStatus } from './actions/user_actions';
+import { authStatus, signup } from './actions/user_actions';
 
-function App({ currentUser, alert, loading, authStatus }) {
+function App({ currentUser, alert, loading, authStatus, signup }) {
 
   const [pokemon, setPokemon] = useState([]);
   const [fetchName, setFetchName] = useState(false);
@@ -58,7 +58,7 @@ function App({ currentUser, alert, loading, authStatus }) {
       <Routes>
         <Route exact path={"/"} element={<Home />} />
 
-        <Route exact path={"/signup"} element={<Signup currentUser={currentUser} />} />
+        <Route exact path={"/signup"} element={<Signup currentUser={currentUser} signup={signup} />} />
 
         <Route exact path={"/login"} element={<Login />} />
       </Routes>
@@ -84,6 +84,7 @@ export default connect(
     loading: state.loadReducer.loading
   }),
   {
-    authStatus
+    authStatus,
+    signup
   }
 )(App)
