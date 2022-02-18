@@ -25,7 +25,8 @@ export default function Login({ login }) {
 
     const handleSubmit = e => {
       e.preventDefault();
-      login(userdata)
+      login(userdata);
+      navigate("/");
     }
 
     return (

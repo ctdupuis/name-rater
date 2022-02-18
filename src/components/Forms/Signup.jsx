@@ -25,7 +25,8 @@ export default function Signup({ signup }) {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        signup(userdata)
+        signup(userdata);
+        navigate("/")
       }
 
     return (

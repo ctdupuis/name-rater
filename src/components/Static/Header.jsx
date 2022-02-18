@@ -11,7 +11,7 @@ export default function Header({ currentUser, logout }) {
         <div className="flex-cont" style={{marginLeft: "2%", width:"15%", justifyContent:"space-around"}}>
           { currentUser ? 
           <>
-            <div>{currentUser.username}</div>
+            <div style={{alignSelf:"center", color:"whitesmoke"}}>{currentUser.username}</div>
             <button onClick={() => logout()} className="auth-btn login">Log Out</button>
           </>
           :

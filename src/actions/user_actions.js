@@ -32,7 +32,8 @@ export const login = userdata => {
         dispatch({ type: 'START_LOAD' })
         const res = await axios.post(`${API_ROOT}/users/login`, { userdata }, {withCredentials:true})
         const user = res.data;
-        console.log(user)
+        dispatch({ type: 'LOGIN_USER', payload: user })
+        dispatch({ type: 'END_LOAD'})
     }
 }
 
