@@ -44,8 +44,8 @@ db();
 // Routers
 const userRouter = require('./routes/user_routes');
 const nameRouter = require("./routes/name_routes");
-app.use("api/users", userRouter);
-app.use("api/names", nameRouter);
+app.use("/api/users", userRouter);
+app.use("/api/names", nameRouter);
 
 
 

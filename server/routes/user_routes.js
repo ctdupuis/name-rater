@@ -13,6 +13,6 @@ router.get("/auth", auth);
 router.post("/signup", signup);
 router.post("/login", login);
 router.get("/logout", logout);
-router.get("/reset/:id", resetPassword);
+router.post("/reset/:email", resetPassword);
 
 module.exports = router;

@@ -46,8 +46,13 @@ module.exports = {
     },
     resetPassword: async(req, res) => {
         try {
-            const user = await User.findById(req.params.id);
-            res.status(200).send(user);
+            const user = await User.findOne({ email: req.body.email });
+            if (user) {
+                sendEmail(user.email, "Password Reset | Name Rater", "Pretend there's a link here to click and then pretend to click it, would ya?")
+                res.status(200).send({ alert: { type: 'success', message: 'Password reset sent to your email'}});
+            } else {
+                res.status(404).send({ alert: { type: 'error' ,message: "We couldn't find a user with that email"}})
+            }
         } catch (err) {
             console.log(err)
             res.status(404).send(err)
