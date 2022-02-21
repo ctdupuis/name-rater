@@ -2,6 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const salt = bcrypt.genSaltSync(10);
+const sendEmail = require('../../utils/sendEmail');
 
 module.exports = {
     auth: async(req, res) => {
@@ -42,5 +43,14 @@ module.exports = {
     logout: async(req, res) => {
         req.session.destroy();
         res.status(200).send({ alert: { type: 'success', message: 'Successfully logged out'}})
+    },
+    resetPassword: async(req, res) => {
+        try {
+            const user = await User.findById(req.params.id);
+            res.status(200).send(user);
+        } catch (err) {
+            console.log(err)
+            res.status(404).send(err)
+        }
     }
 };
